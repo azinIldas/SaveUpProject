@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace saveup
+﻿namespace saveup
 {
     public class GespeicherterArtikel
     {

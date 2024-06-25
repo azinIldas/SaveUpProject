@@ -1,5 +1,5 @@
-using Microsoft.Maui.Controls;
 using System;
+using Microsoft.Maui.Controls;
 
 namespace saveup
 {
@@ -21,7 +21,7 @@ namespace saveup
 
             if (!decimal.TryParse(ArtikelPreis.Text, out var preis) || preis <= 0)
             {
-                await DisplayAlert("Fehler", "Der Preis kann nicht unter 0 sein.", "OK");
+                await DisplayAlert("Fehler", "Der Preis muss eine positive Zahl sein.", "OK");
                 return;
             }
 

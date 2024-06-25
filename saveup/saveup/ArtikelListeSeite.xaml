@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="saveup.ArtikelListeSeite">
+             x:Class="saveup.ArtikelListeSeite"
+             BackgroundColor="#121212">
     <StackLayout>
-        <ListView x:Name="ArtikelListView">
+        <ListView x:Name="ArtikelListView"
+                  BackgroundColor="#121212">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Beschreibung}" Detail="{Binding Preis}" />
+                    <TextCell Text="{Binding Beschreibung}"
+                              Detail="{Binding Preis, StringFormat='CHF {0:N2}'}"
+                              TextColor="#FFFFFF"
+                              DetailColor="#B3B3B3"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Alle löschen" Clicked="OnLeerenClicked"/>
+        <Button Text="Alle löschen"
+                Clicked="OnLeerenClicked"
+                BackgroundColor="#1F1F1F"
+                TextColor="#FFFFFF"/>
     </StackLayout>
 </ContentPage>

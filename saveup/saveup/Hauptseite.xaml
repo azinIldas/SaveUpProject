@@ -1,10 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="saveup.Hauptseite">
-    <StackLayout>
-        <Label x:Name="GesamtbetragLabel" Text="Gesamtbetrag: 0,00 CHF" FontSize="Large" HorizontalOptions="Center" />
-        <Button Text="Artikel hinzufügen" Clicked="OnArtikelHinzufuegenClicked"/>
-        <Button Text="Artikel anzeigen" Clicked="OnArtikelAnzeigenClicked"/>
+             x:Class="saveup.Hauptseite"
+             BackgroundColor="#121212">
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20" Padding="30">
+        <Label x:Name="GesamtbetragLabel"
+               Text="Total Gespart: 0,00 CHF"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               TextColor="#FFFFFF" />
+        <Button Text="Neuer Artikel"
+                Clicked="OnArtikelHinzufuegenClicked"
+                BackgroundColor="#1F1F1F"
+                TextColor="#FFFFFF"
+                WidthRequest="300"/>
+        <Button Text="Liste"
+                Clicked="OnArtikelAnzeigenClicked"
+                BackgroundColor="#1F1F1F"
+                TextColor="#FFFFFF"
+                WidthRequest="300"/>
     </StackLayout>
 </ContentPage>

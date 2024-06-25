@@ -4,7 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:saveup"
     x:Class="saveup.AppShell"
-    Title="SaveUp">
+    BackgroundColor="#121212"
+    ForegroundColor="#FFFFFF"
+    TitleColor="#FFFFFF"
+    DisabledColor="#B3B3B3"
+    UnselectedColor="#B3B3B3">
     <ShellContent
         Title="Hauptseite"
         ContentTemplate="{DataTemplate local:Hauptseite}" />

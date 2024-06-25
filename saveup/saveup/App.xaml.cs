@@ -1,7 +1,5 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls.Hosting;
+﻿using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
-using System.IO;
 
 namespace saveup
 {
@@ -25,7 +23,12 @@ namespace saveup
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Hauptseite());
+            // NavigationPage für Dark Mode anpassen
+            MainPage = new NavigationPage(new Hauptseite())
+            {
+                BarBackgroundColor = Color.FromArgb("#121212"),
+                BarTextColor = Color.FromArgb("#FFFFFF")
+            };
         }
     }
 }
