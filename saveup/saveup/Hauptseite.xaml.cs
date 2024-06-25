@@ -34,7 +34,7 @@ namespace saveup
         {
             var artikelListe = await App.ArtikelSpeicher.LadeArtikelAsync();
             var gesamtbetrag = artikelListe.Sum(a => a.Preis);
-            GesamtbetragLabel.Text = $"Gesamtbetrag: {gesamtbetrag:C}";
+            GesamtbetragLabel.Text = $"Gesamtbetrag: {gesamtbetrag.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("de-CH"))}";
         }
     }
 }

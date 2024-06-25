@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="saveup.Hauptseite">
     <StackLayout>
-        <Label x:Name="GesamtbetragLabel" Text="Gesamtbetrag: 0,00 €" FontSize="Large" HorizontalOptions="Center" />
+        <Label x:Name="GesamtbetragLabel" Text="Gesamtbetrag: 0,00 CHF" FontSize="Large" HorizontalOptions="Center" />
         <Button Text="Artikel hinzufügen" Clicked="OnArtikelHinzufuegenClicked"/>
         <Button Text="Artikel anzeigen" Clicked="OnArtikelAnzeigenClicked"/>
     </StackLayout>

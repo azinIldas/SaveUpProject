@@ -1,7 +1,5 @@
 using Microsoft.Maui.Controls;
 using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace saveup
 {
@@ -15,7 +13,17 @@ namespace saveup
         private async void OnSpeichernClicked(object sender, EventArgs e)
         {
             var beschreibung = ArtikelBeschreibung.Text;
-            var preis = decimal.Parse(ArtikelPreis.Text);
+            if (string.IsNullOrWhiteSpace(beschreibung))
+            {
+                await DisplayAlert("Fehler", "Die Beschreibung darf nicht leer sein.", "OK");
+                return;
+            }
+
+            if (!decimal.TryParse(ArtikelPreis.Text, out var preis) || preis <= 0)
+            {
+                await DisplayAlert("Fehler", "Der Preis kann nicht unter 0 sein.", "OK");
+                return;
+            }
 
             var neuerArtikel = new GespeicherterArtikel
             {
