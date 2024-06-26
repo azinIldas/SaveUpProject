@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace saveup
@@ -26,6 +27,18 @@ namespace saveup
             artikelListe.Add(artikel);
             var json = JsonConvert.SerializeObject(artikelListe, Formatting.Indented);
             await File.WriteAllTextAsync(dateiPfad, json);
+        }
+
+        public async Task LoescheArtikelAsync(GespeicherterArtikel artikel)
+        {
+            var artikelListe = await LadeArtikelAsync();
+            var artikelZuEntfernen = artikelListe.FirstOrDefault(a => a.Beschreibung == artikel.Beschreibung && a.Preis == artikel.Preis && a.Datum == artikel.Datum);
+            if (artikelZuEntfernen != null)
+            {
+                artikelListe.Remove(artikelZuEntfernen);
+                var json = JsonConvert.SerializeObject(artikelListe, Formatting.Indented);
+                await File.WriteAllTextAsync(dateiPfad, json);
+            }
         }
 
         public async Task LoescheAlleArtikelAsync()

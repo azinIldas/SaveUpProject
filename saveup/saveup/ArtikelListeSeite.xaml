@@ -8,16 +8,33 @@
                   BackgroundColor="#121212">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Beschreibung}"
-                              Detail="{Binding Preis, StringFormat='CHF {0:N2}'}"
-                              TextColor="#FFFFFF"
-                              DetailColor="#B3B3B3"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="1">
+                            <Label Text="{Binding Beschreibung}"
+                                   TextColor="#FFFFFF"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding Preis, StringFormat='CHF {0:N2}'}"
+                                   TextColor="#B3B3B3"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="EndAndExpand"/>
+                            <BoxView WidthRequest="20" Color="Transparent" />
+                            <Button Text="Löschen"
+                                    BackgroundColor="#FF5252"
+                                    TextColor="#FFFFFF"
+                                    Command="{Binding Path=BindingContext.LoescheArtikelCommand, Source={x:Reference ArtikelListView}}"
+                                    CommandParameter="{Binding .}"
+                                    HorizontalOptions="End"
+                                    WidthRequest="100"
+                                    VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <Button Text="Alle löschen"
                 Clicked="OnLeerenClicked"
-                BackgroundColor="#1F1F1F"
+                BackgroundColor="#FF5252"
                 TextColor="#FFFFFF"/>
     </StackLayout>
 </ContentPage>
